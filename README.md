@@ -9,7 +9,6 @@ This is the basic Next.js app I used to create a marketing landing page. It incl
 From the repo root:
 
 ```bash
-cd examples/basic-nextjs
 npm install
 npm run dev
 ```
