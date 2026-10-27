@@ -35,7 +35,7 @@ export default function Hero({
                 {image && (
                     <div className="flex min-h-72 items-center justify-center md:min-h-96">
                         <img
-                            src={image.src}
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${image.src}`}
                             alt={image.alt}
                             className="h-full max-h-96 w-full rounded-[2rem] object-cover"
                         />
