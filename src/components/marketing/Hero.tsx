@@ -4,8 +4,6 @@ export default function Hero({
     eyebrow,
     title,
     description,
-    buttonText,
-    buttonHref,
     image,
     link
 }: HeroContent) {

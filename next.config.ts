@@ -1,7 +1,11 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
+  output: isGitHubPages ? 'export' : undefined,
+  basePath: isGitHubPages ? '/nextjs-demo' : undefined,
   // Allow specifying a distinct distDir when concurrently running app in a container
   distDir: process.env.NEXTJS_DIST_DIR || '.next',
   
@@ -32,7 +36,9 @@ const nextConfig: NextConfig = {
   },
   
   // use this configuration to serve the sitemap.xml and robots.txt files from the API route handlers
-  rewrites: async () => {
+  rewrites: isGitHubPages
+  ? undefined
+  : async () => {
     return [
       {
         // sitemap.xml serves the main sitemap

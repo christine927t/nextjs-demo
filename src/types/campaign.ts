@@ -2,8 +2,6 @@ export type HeroContent = {
     eyebrow: string;
     title: string;
     description: string;
-    buttonText: string;
-    buttonHref: string;
     image?: ImageContent;
     link?: LinkContent;
 };
